@@ -7,18 +7,10 @@
 import xlsxwriter
 import pyodbc
 import openpyxl as opx
-
 import calendar
 import datetime
-from datetime import date
+# from datetime import date
 import kontrole_lib as kon
-
-# import tkinter as tk
-# from tkinter import filedialog
-# from tkinter import messagebox
-# from tkinter import ttk
-# from tkinter.ttk import Progressbar
-# from tkinter import Menu
 
 
 def populateSTTSheet(sheet_name, dateto):
@@ -519,7 +511,7 @@ def readSLV(slv_file, cs_kol, cc_kol, paid_kol):
                 cell2 = row[int(cc_kol) - 1]
                 cell3 = row[int(cs_kol) - 1]
                 cell4 = row[int(paid_kol) - 1]
-                # print(cell1, cell2, cell3, cell4) test sta vraca
+
                 lista_slv.append((cell1, cell2, cell3, cell4))
     book.close()
     del book
@@ -863,20 +855,16 @@ def generateExcel(dateto_text, slv_file, cs_kol, cc_kol, paid_kol, textinfo, bar
     cell_num = workbook.add_format()
     cell_num.set_num_format('#,##0')
 
-    # cell_tpercent = workbook.add_format()
-    # cell_tpercent.set_num_format('0.00%')
-    # cell_tpercent.set_bg_color('yellow')
-
-    cell_tpercent = workbook.add_format({'num_format': '0.00%', 'bg_color': 'yellow'})
-    # cell_tpercent.set_num_format('0.00%')
-    # cell_tpercent.set_bg_color('yellow')
+    cell_tpercent = workbook.add_format()
+    cell_tpercent.set_num_format('0.00%')
+    cell_tpercent.set_bg_color('yellow')
 
     cell_tnum = workbook.add_format()
     cell_tnum.set_num_format('#,##0')
     cell_tnum.set_bg_color('yellow')
 
-    cell_tyellow = workbook.add_format({'font_color': 'yellow'})
-    # cell_tyellow.set_bg_color('yellow')
+    cell_tyellow = workbook.add_format()
+    cell_tyellow.set_bg_color('yellow')
 
     cell_wrap = workbook.add_format()
     cell_wrap.set_text_wrap()
