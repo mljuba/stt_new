@@ -5,7 +5,6 @@
 # import time
 
 import xlsxwriter
-# import xlrd
 import pyodbc
 import openpyxl as opx
 
@@ -24,11 +23,6 @@ import kontrole_lib as kon
 
 def populateSTTSheet(sheet_name, dateto):
     # create sheet headers
-
-    cell_wrap.set_text_wrap()
-    cell_wrap.set_align('center')
-    cell_wrap.set_align('vcenter')
-
     pomdate_god = int(kon.right(dateto, 4))
     pomdate_mes = int(kon.right(kon.left(dateto, 5), 2))
     pomdate_dan = int(kon.left(dateto, 2))
@@ -121,22 +115,22 @@ def populateSTTSheet(sheet_name, dateto):
     sheet_name.write('E4', 'Cartons / pallet', cell_wrap)
     sheet_name.write('I4', 'LAST 3 MONTHS AVG SALES', cell_wrap)
 
-    cell_green.set_font_color('green')
-    cell_green.set_text_wrap()
-    cell_green.set_align('center')
-    cell_green.set_align('vcenter')
+    # cell_green.set_font_color('green')
+    # cell_green.set_text_wrap()
+    # cell_green.set_align('center')
+    # cell_green.set_align('vcenter')
     sheet_name.write('J4', 'CC Inventory ' + dateto, cell_green)
 
-    cell_blue.set_font_color('blue')
-    cell_blue.set_text_wrap()
-    cell_blue.set_align('center')
-    cell_blue.set_align('vcenter')
+    # cell_blue.set_font_color('blue')
+    # cell_blue.set_text_wrap()
+    # cell_blue.set_align('center')
+    # cell_blue.set_align('vcenter')
     sheet_name.write('K4', 'CS Inventory ' + dateto, cell_blue)
 
-    cell_red.set_font_color('red')
-    cell_red.set_text_wrap()
-    cell_red.set_align('center')
-    cell_red.set_align('vcenter')
+    # cell_red.set_font_color('red')
+    # cell_red.set_text_wrap()
+    # cell_red.set_align('center')
+    # cell_red.set_align('vcenter')
     sheet_name.write('L4', 'Paid Inventory ' + dateto, cell_red)
 
     sheet_name.write('M4', 'WS Inventory ' + dateto, cell_wrap)
@@ -195,15 +189,15 @@ def populateProductsSTT(sheet_name, vr_sifra, vr_naziv):
     sumstart[0] = 6
     # kartona_na_paleti = 0.0
 
-    cell_num.set_num_format('#,##0')
-    cell_tnum.set_num_format('#,##0')
-    cell_tnum.set_bg_color('yellow')
-
-    cell_percent.set_num_format('0.00%')
-    cell_tpercent.set_num_format('0.00%')
-    cell_tpercent.set_bg_color('yellow')
-
-    cell_tyellow.set_bg_color('yellow')
+    # cell_num.set_num_format('#,##0')
+    # cell_tnum.set_num_format('#,##0')
+    # cell_tnum.set_bg_color('yellow')
+    #
+    # cell_percent.set_num_format('0.00%')
+    # cell_tpercent.set_num_format('0.00%')
+    # cell_tpercent.set_bg_color('yellow')
+    #
+    # cell_tyellow.set_bg_color('yellow')
 
     sqltext = "SELECT ap.sifra as sifra,ap.naziv as naziv,ap.aktivan as aktivan, "
     sqltext = sqltext + "ap.produkt_gen_naziv_id as produkt_gen_naziv_id,"
@@ -842,16 +836,52 @@ def generateExcel(dateto_text, slv_file, cs_kol, cc_kol, paid_kol, textinfo, bar
     global cell_tyellow
 
     workbook = xlsxwriter.Workbook(sttname)
+
     cell_red = workbook.add_format()
+    cell_red.set_font_color('red')
+    cell_red.set_text_wrap()
+    cell_red.set_align('center')
+    cell_red.set_align('vcenter')
+
     cell_blue = workbook.add_format()
+    cell_blue.set_font_color('blue')
+    cell_blue.set_text_wrap()
+    cell_blue.set_align('center')
+    cell_blue.set_align('vcenter')
+
     cell_green = workbook.add_format()
+    cell_green.set_font_color('green')
+    cell_green.set_text_wrap()
+    cell_green.set_align('center')
+    cell_green.set_align('vcenter')
+
     cell_yellow = workbook.add_format()
+
     cell_percent = workbook.add_format()
+    cell_percent.set_num_format('0.00%')
+
     cell_num = workbook.add_format()
-    cell_tpercent = workbook.add_format()
+    cell_num.set_num_format('#,##0')
+
+    # cell_tpercent = workbook.add_format()
+    # cell_tpercent.set_num_format('0.00%')
+    # cell_tpercent.set_bg_color('yellow')
+
+    cell_tpercent = workbook.add_format({'num_format': '0.00%', 'bg_color': 'yellow'})
+    # cell_tpercent.set_num_format('0.00%')
+    # cell_tpercent.set_bg_color('yellow')
+
     cell_tnum = workbook.add_format()
-    cell_tyellow = workbook.add_format()
+    cell_tnum.set_num_format('#,##0')
+    cell_tnum.set_bg_color('yellow')
+
+    cell_tyellow = workbook.add_format({'font_color': 'yellow'})
+    # cell_tyellow.set_bg_color('yellow')
+
     cell_wrap = workbook.add_format()
+    cell_wrap.set_text_wrap()
+    cell_wrap.set_align('center')
+    cell_wrap.set_align('vcenter')
 
     lista_art = {}
     # slv_art = []

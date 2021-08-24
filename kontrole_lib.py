@@ -1,13 +1,13 @@
 # import calendar
 import datetime
-from datetime import date
+# from datetime import date
 
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 # from tkinter import ttk
-from tkinter.ttk import Progressbar
-from tkinter import Menu
+# from tkinter.ttk import Progressbar
+# from tkinter import Menu
 
 
 def updateVrsta(up_vrsta, textinfo):

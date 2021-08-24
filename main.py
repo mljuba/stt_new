@@ -3,25 +3,17 @@ Created on 24.08.2021.
 
 @author: ljmarjanovic
 """
-# import sys
-# import time
-
-# import xlsxwriter
-# import pyodbc
-# import openpyxl as opx
-
 import stt_lib as stt
 import kontrole_lib as kon
 
-import calendar
+# import calendar
 import datetime
 from datetime import date
 
 import tkinter as tk
-from tkinter import filedialog
+# from tkinter import filedialog
 from tkinter import messagebox
 from tkinter.ttk import Progressbar
-# from tkinter import Menu
 
 
 # main for function call.
@@ -170,10 +162,13 @@ if __name__ == "__main__":
     slv = tk.Entry(root, textvar=SLVFile, width=50)
     slv.place(x=100, y=180)
 
+#    def nadjiSLV():
+#        kon.findSLV(SLVFile, slv)
+    tk.Button(root, text='Pronadji', width=10, command=nadjiSLV).place(x=420, y=175)
+
+
     def nadjiSLV():
         kon.findSLV(SLVFile, slv)
-
-    tk.Button(root, text='Pronadji', width=10, command=nadjiSLV).place(x=420, y=175)
 
     lblCS = tk.Label(root, text="SLV CS kol", width=20, font=("bold", 10), anchor="w")
     lblCS.place(x=10, y=260)
