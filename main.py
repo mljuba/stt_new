@@ -162,8 +162,6 @@ if __name__ == "__main__":
     slv = tk.Entry(root, textvar=SLVFile, width=50)
     slv.place(x=100, y=180)
 
-#    def nadjiSLV():
-#        kon.findSLV(SLVFile, slv)
     tk.Button(root, text='Pronadji', width=10, command=nadjiSLV).place(x=420, y=175)
 
 

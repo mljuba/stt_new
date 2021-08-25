@@ -13,7 +13,7 @@ def updateVrsta(up_vrsta, textinfo):
 
 
 def updateBar(broj, bar):
-    bar['value'] = int(broj) * 5
+    bar['value'] = int(broj) * 4 + 5
 
 
 def _check(self, index, size):
