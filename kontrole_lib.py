@@ -55,7 +55,7 @@ def checkDate(date_text):
         datetime.datetime.strptime(date_text, '%d.%m.%Y')
         return 1
     except ValueError:
-        messagebox.showwarning('Greska u datumu', 'Nije ispravan format datuma! \n Treba biti npr. 01.06.2020')
+        messagebox.showwarning('Greska u datumu', 'Nije ispravan format datuma! \n Treba biti npr. 01.06.2021')
         return 0
 
 

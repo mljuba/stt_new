@@ -871,16 +871,24 @@ def generateExcel(dateto_text, slv_file, cs_kol, cc_kol, paid_kol, textinfo, bar
     cell_wrap.set_align('center')
     cell_wrap.set_align('vcenter')
 
-    lista_art = {}
+    lista_art = []
     # slv_art = []
 
-    vrste = (["CP", "01", 1], ["Filiz", "10", 2], ["Philips", "11", 3], ["Barilla", "12", 4], ["Naturel", "18", 5],
-             ["Naturel Musli", "19", 6],
-             ["Heinz", "23", 7], ["Weaver Popcorn", "21", 8], ["Naturel Krekeri", "30", 9], ["Zewa", "33", 10],
-             ["Libresse", "37", 11],
-             ["Kotanyi", "06", 12], ["Naturel Pastete", "35", 13], ["Labud", "39", 14], ["Aroma", "41", 15],
-             ["Erdal", "42", 16], ["Franck", "51", 17], ["Philadelphia", "55", 18], ["Juicy", "54", 19],
-             ["FS Savex", "57", 20], ["FS Semana", "58", 21], ["FS Pufies", "59", 22], ["Ostalo", "99", 23])
+    vrste = (("CP", "01", 1), ("Filiz", "10", 2), ("Philips", "11", 3), ("Barilla", "12", 4), ("Naturel", "18", 5),
+             ("Naturel Musli", "19", 6),
+             ("Heinz", "23", 7), ("Weaver Popcorn", "21", 8), ("Naturel Krekeri", "30", 9), ("Zewa", "33", 10),
+             ("Libresse", "37", 11),
+             ("Kotanyi", "06", 12), ("Naturel Pastete", "35", 13), ("Labud", "39", 14), ("Aroma", "41", 15),
+             ("Erdal", "42", 16), ("Franck", "51", 17), ("Philadelphia", "55", 18), ("Juicy", "54", 19),
+             ("FS Savex", "57", 20), ("FS Semana", "58", 21), ("FS Pufies", "59", 22), ("Ostalo", "99", 23))
+
+    # vrste = (["CP", "01", 1], ["Filiz", "10", 2], ["Philips", "11", 3], ["Barilla", "12", 4], ["Naturel", "18", 5],
+    #          ["Naturel Musli", "19", 6],
+    #          ["Heinz", "23", 7], ["Weaver Popcorn", "21", 8], ["Naturel Krekeri", "30", 9], ["Zewa", "33", 10],
+    #          ["Libresse", "37", 11],
+    #          ["Kotanyi", "06", 12], ["Naturel Pastete", "35", 13], ["Labud", "39", 14], ["Aroma", "41", 15],
+    #          ["Erdal", "42", 16], ["Franck", "51", 17], ["Philadelphia", "55", 18], ["Juicy", "54", 19],
+    #          ["FS Savex", "57", 20], ["FS Semana", "58", 21], ["FS Pufies", "59", 22], ["Ostalo", "99", 23])
 
     # Ocitaj slv i ubaci u niz
     slv_art = readSLV(slv_file, cs_kol, cc_kol, paid_kol)
@@ -909,4 +917,4 @@ def generateExcel(dateto_text, slv_file, cs_kol, cc_kol, paid_kol, textinfo, bar
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print('PyCharm')
+    print('Pogresan poziv funkcije')
