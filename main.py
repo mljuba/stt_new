@@ -32,11 +32,13 @@ if __name__ == "__main__":
 
 
     def _msgBox():
-        # messagebox.showinfo('Python message info box', 'O pitonu')
-        # messagebox.showwarning('Python message info box', 'O pitonu')
-        # messagebox.showerror('Python message info box', 'O pitonu')
-        # messagebox.askyesno("Python message dual choice box", "Are you sure?")
+        """ messagebox.showinfo('Python message info box', 'O pitonu')
+            messagebox.showwarning('Python message info box', 'O pitonu')
+            messagebox.showerror('Python message info box', 'O pitonu')
+            messagebox.askyesno("Python message dual choice box", "Are you sure?")
+        """
         messagebox.showinfo('STT Aplikacija', 'STT izvestaj za logistiku 2021')
+
 
     def nadjiSLV():
         kon.findSLV(SLVFile, slv)
@@ -118,8 +120,6 @@ if __name__ == "__main__":
                 f1 = 4
                 slv.focus_set()
 
-        # if (d1 == 1) and (d2 == 1) and (c1 == 1) and (c2 == 1) and (p1 == 1) and (s1 == 1):
-        # if (d1 == 1) and (d2 == 1) and (f1 == 1):
         if (d1 == 1) and (d2 == 1) and (f1 == 0):
             stt.generateExcel(DoDatuma.get(), slv.get(), cs.get(), cc.get(), paid.get(), textInfo, bar)
             textInfo.delete(0, tk.END)
