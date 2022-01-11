@@ -43,7 +43,6 @@ if __name__ == "__main__":
     def nadjiSLV():
         kon.findSLV(SLVFile, slv)
 
-
     # Gets the requested values of the height and width.
     windowWidth = root.winfo_reqwidth()
     windowHeight = root.winfo_reqheight()
@@ -163,10 +162,6 @@ if __name__ == "__main__":
     slv.place(x=100, y=180)
 
     tk.Button(root, text='Pronadji', width=10, command=nadjiSLV).place(x=420, y=175)
-
-
-    def nadjiSLV():
-        kon.findSLV(SLVFile, slv)
 
     lblCS = tk.Label(root, text="SLV CS kol", width=20, font=("bold", 10), anchor="w")
     lblCS.place(x=10, y=260)
