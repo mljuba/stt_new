@@ -813,7 +813,7 @@ def populateNabavna(sheet_name, vr_sifra, ar_lista):
 
 
 def generateExcel(dateto_text, slv_file, cs_kol, cc_kol, paid_kol, textinfo, bar):
-    # Create an new Excel file and add a worksheet.
+    # Create a new Excel file and add a worksheet.
     sttname = 'Z:/STT Report {:%Y-%m-%d %H %M}.xlsx'.format(datetime.datetime.now())
 
     global cell_red
